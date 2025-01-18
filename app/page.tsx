@@ -1,6 +1,7 @@
 "use client";
 
 import { Heart, Brain, Smile, Sparkles, ArrowRight, Moon, Star, Flame } from "lucide-react";
+import { redirect } from "next/navigation";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -111,7 +112,7 @@ export default function Home() {
               Discover a sanctuary of tranquility in your daily life. Our proven techniques help you manage stress, reduce anxiety, and cultivate lasting inner peace.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-              <button className="group px-8 py-4 bg-gradient-to-r from-rose-400 via-pink-400 to-violet-400 hover:from-rose-500 hover:via-pink-500 hover:to-violet-500 text-white rounded-full font-semibold text-lg animate-pulse-border hover:animate-none transition-all duration-300 flex items-center justify-center hover:scale-105 hover:shadow-xl">
+              <button onClick={()=>redirect('/dashboard')} className="group px-8 py-4 bg-gradient-to-r from-rose-400 via-pink-400 to-violet-400 hover:from-rose-500 hover:via-pink-500 hover:to-violet-500 text-white rounded-full font-semibold text-lg animate-pulse-border hover:animate-none transition-all duration-300 flex items-center justify-center hover:scale-105 hover:shadow-xl">
                 Get Started Now
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
               </button>

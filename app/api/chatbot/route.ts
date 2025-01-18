@@ -18,7 +18,7 @@ export async function POST(req:NextRequest, res:NextResponse) {
         const data = await req.json()
         
         // Define a prompt varibale
-        const prompt = data.body
+        const prompt = data.body+"the message you will receive after a full stop if from a person who is stress and needs help managing stress, you are a bot from MoodMap which is a stress management website only tell about yourself when asked, help the user deal with stress. "
         //const prompt="I am a 21 year old male and I am feeling stressed, ask me 10 questions which I could answer to feel better. To seperate questions put ?<> between them do not write anything else other than questions and do not put them in new line"
         // Pass the prompt to the model and retrieve the output
         const result = await model.generateContent(prompt)

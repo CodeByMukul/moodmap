@@ -32,7 +32,7 @@ const Chatbot = () => {
 
   const handleSendMessage = async () => {
     if(session.status=="unauthenticated")redirect('/signin')
-    const message = messagee;
+    const message=messagee;
     if (!message.trim()) return;
     setMessage('');
 
