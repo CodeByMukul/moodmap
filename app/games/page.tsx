@@ -1,27 +1,25 @@
+"use client"
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { redirect } from 'next/navigation'
-import Link from 'next/link'
+import { RedirectType } from 'next/navigation'
 
 const games = [
   {
     title: "Mindfulness Breathing",
     description: "Follow the animation of a circle expanding and contracting to sync your breathing.",
     image: "/placeholder.svg?height=200&width=300",
-    link:'/breathing'
   },
   {
     title: "Puzzle Game",
     description: "Simple jigsaw puzzles with serene landscapes to help you relax and focus.",
     image: "/placeholder.svg?height=200&width=300",
-    link:'/games'
   },
   {
     title: "Relaxation Adventure",
     description: "Explore a calming virtual forest or ocean to unwind and de-stress.",
     image: "/placeholder.svg?height=200&width=300",
-    link:'/games'
   },
 ]
 
@@ -48,9 +46,7 @@ export default function Games() {
                 />
               </CardContent>
               <CardFooter>
-                <Link href={game.link}>
-                <Button className="w-full">Play Now</Button>
-                </Link>
+                <Button className="w-full" onClick={()=>redirect('/breathing')}>Play Now</Button>
               </CardFooter>
             </Card>
           ))}
